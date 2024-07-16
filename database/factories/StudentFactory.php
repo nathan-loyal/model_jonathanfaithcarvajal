@@ -2,12 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\Student;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\student>
  */
-class StudentfactoryFactory extends Factory
+class StudentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -23,8 +25,8 @@ class StudentfactoryFactory extends Factory
             'phone' => fake()->phoneNumber(),
             'address' => fake()->address(),
             'city' => fake()->city(),
-            'province' => fake()->provonce(),
-            'zip' => fake()->zip(),
+            'province' => fake()->state(),
+            'zip' => fake()->postcode(),
             'birthdate' => fake()->dateTimeBetween('2000-01-01', '2010-12-30')->format('Y-m-d'),
         ];
     }
