@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\SubjectGrade;
+use Carbon\Carbon;
 
 class Student extends Model
 {
@@ -35,6 +36,7 @@ class Student extends Model
             return Carbon::parse($birthdate)->format('F d, y');
         }
     } 
+
     public function grades()
     {
         return $this->hasMany(SubjectGrade::class, 'student_id');
